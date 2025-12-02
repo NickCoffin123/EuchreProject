@@ -1,0 +1,44 @@
+﻿<Page x:Class="EuchreGroupProject.Windows.Pages.ChallengerSelectorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EuchreGroupProject.Windows.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="800"
+      Title="ChallengerSelectorPage">
+    <StackPanel VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+        <TextBlock Style="{StaticResource EuchreFont}"
+                   Text="Choose your challenger"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   FontSize="32"
+                   Margin="0,0,0,50"
+                   Effect="{StaticResource GlowEffect}"/>
+
+        <StackPanel x:Name="ChallengerSelectContainer" 
+                    Orientation="Horizontal"
+                    Grid.Row="1"
+                    Height="50"
+                    HorizontalAlignment="Center">
+            <Button Style="{StaticResource GenericEuchreButtonStyle}"
+                    x:Name="HumanVsHumanButton"
+                    Content="Human Vs. Human"
+                    Width="200"
+                    Margin="0,0,10,0"
+                    Click="HumanVsHumanButton_Click"/>
+            <Button Style="{StaticResource GenericEuchreButtonStyle}"
+                    x:Name="HumanVsAIButton"
+                    Content="Human Vs. AI"
+                    Width="200"
+                    Margin="10,0,0,0"
+                    Click="HumanVsAIButton_Click"/>
+        </StackPanel>
+        <Button Style="{StaticResource GenericEuchreButtonStyle}"
+                x:Name="ReturnToMenuButton"
+                Content="Cancel"
+                Margin="0,20,0,0"
+                Click="ReturnToMenuButton_Click"/>
+    </StackPanel>
+</Page>

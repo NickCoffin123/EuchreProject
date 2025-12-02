@@ -1,0 +1,91 @@
+﻿<Border x:Class="EuchreGroupProject.Card"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:EuchreGroupProject"
+        mc:Ignorable="d" 
+        d:DesignHeight="236" d:DesignWidth="140"
+        Width="140"
+        Height="236"
+        Background="White"
+        CornerRadius="10"
+        BorderBrush="Black"
+        BorderThickness="1.5"
+        MouseLeftButtonDown="Card_MouseLeftButtonDown"
+        MouseEnter="Card_MouseEnter"
+        MouseLeave="Card_MouseLeave">
+    <!-- Adding a TranslateTransform allows for control animations -->
+    <Border.RenderTransform>
+        <TranslateTransform/>
+    </Border.RenderTransform>
+    <Grid>
+        <Grid>
+            <!-- Main grid content definition -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            <!-- Rank + suit top left -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="TopLeftRankDisplay"
+                               Text="A"
+                               TextAlignment="Center"
+                               FontFamily="Times New Roman"
+                               FontSize="36"
+                               Height="39"/>
+                    <Image x:Name="TopLeftSuitDisplay"
+                           Source="pack://application:,,,/Resources/Suits/Spades.png"
+                           Width="30"/>
+                </StackPanel>
+            </Grid>
+            <!-- Main suit image -->
+            <Image x:Name="MainSuitDisplay"
+                   Source="pack://application:,,,/Resources/Suits/Spades.png"
+                   Grid.Row="1"/>
+            <!-- Rank + suit borrom right -->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical"
+                            Grid.Column="1">
+                    <Image x:Name="BottomRightSuitDisplay"
+                           Source="pack://application:,,,/Resources/Suits/Spades.png"
+                           Width="30"
+                           RenderTransformOrigin="0.5,0.55"
+                           Margin="0,0,0,5">
+                        <Image.RenderTransform>
+                            <RotateTransform Angle="180"/>
+                        </Image.RenderTransform>
+                    </Image>
+                    <TextBlock x:Name="BottomRightRankDisplay"
+                               Text="A"
+                               TextAlignment="Center"
+                               FontFamily="Times New Roman"
+                               FontSize="36"
+                               Height="39"
+                               RenderTransformOrigin="0.5,0.45">
+                        <TextBlock.RenderTransform>
+                            <RotateTransform Angle="180"/>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <!--This img is to be made visible on card flip as to show the back of the card -->
+        <Image x:Name="BackCardDisplay"
+               Source="pack://application:,,,/Resources/GeneralCard/BackCard.png"
+               Visibility="Hidden"
+               Panel.ZIndex="1"
+               ClipToBounds="True"
+               Height="236"/>
+    </Grid>
+</Border>

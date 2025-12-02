@@ -1,0 +1,116 @@
+﻿<Page x:Class="EuchreGroupProject.Windows.Pages.PlayerSetupPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EuchreGroupProject.Windows.Pages"
+      xmlns:components="clr-namespace:EuchreGroupProject.Windows.Components"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PlayerSetupPage">
+    <Viewbox>
+        
+        <Grid VerticalAlignment="Center"
+              HorizontalAlignment="Center"
+              Width="300"
+              Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!-- Player 1 setup. -->
+            <Border x:Name="Player1SetupContainer"
+                    BorderBrush="#DAD7CD" 
+                    BorderThickness="1" 
+                    CornerRadius="10"
+                    Padding="10"
+                    Margin="0,0,0,20">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Style="{StaticResource EuchreFont}"
+                               Text="Player 1"
+                               Margin="0,0,0,10"
+                               FontSize="24"/>
+                    <components:BetterTextBox Placeholder="Enter your display name..."
+                                              TextStyle="{StaticResource EuchreFontDarkTextBox}"
+                                              PlaceholderStyle="{StaticResource EuchreFont}"
+                                              Effect="{StaticResource GlowEffect}"
+                                              BorderBrush="#588157"
+                                              BorderThickness="1"
+                                              CornerRadius="5"
+                                              Background="#A3B18A"
+                                              Padding="3"
+                                              Margin="0,0,0,10"
+                                              x:Name="Player1Name"/>
+                    <RadioButton GroupName="DealerChooser"
+                                 Content="I'll be the dealer first!"
+                                 Style="{StaticResource EuchreFontRadioButton}"
+                                 x:Name="Player1IsDealerButton"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Player 2 setup; this will auto choose if player chose ai. -->
+            <Border x:Name="Player2SetupContainer"
+                    BorderBrush="#DAD7CD" 
+                    BorderThickness="1" 
+                    CornerRadius="10"
+                    Padding="10"
+                    Grid.Row="1"
+                    Margin="0,0,0,20">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Style="{StaticResource EuchreFont}"
+                               Text="Player 2"
+                               Margin="0,0,0,10"
+                               FontSize="24"
+                               x:Name="Player2Label"/>
+                    <components:BetterTextBox Placeholder="Enter your display name..."
+                                              TextStyle="{StaticResource EuchreFontDarkTextBox}"
+                                              PlaceholderStyle="{StaticResource EuchreFont}"
+                                              Effect="{StaticResource GlowEffect}"
+                                              BorderBrush="#588157"
+                                              BorderThickness="1"
+                                              CornerRadius="5"
+                                              Background="#A3B18A"
+                                              Padding="3"
+                                              Margin="0,0,0,10"
+                                              x:Name="Player2Name"/>
+                    <RadioButton GroupName="DealerChooser"
+                                 Content="I'll be the dealer first!"
+                                 Style="{StaticResource EuchreFontRadioButton}"
+                                 x:Name="Player2IsDealerButton"/>
+                </StackPanel>
+            </Border>
+        
+            <!-- Randomize, proceed and cancel button group -->
+            <StackPanel Orientation="Vertical"
+                        Grid.Row="2">
+                <Button Content="Randomize Dealer"
+                        Height="50"
+                        Margin="0,0,0,10"
+                        Style="{StaticResource GenericEuchreButtonStyle}"
+                        x:Name="RandomizeButton"
+                        Click="RandomizeButton_Click"/>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                    <Button Content="Cancel"
+                            Height="50"
+                            Width="145"
+                            Margin="0,0,5,0"
+                            Style="{StaticResource GenericEuchreButtonStyle}"
+                            x:Name="CancelButton"
+                            Click="CancelButton_Click"/>
+                    <Button Content="Continue"
+                            Height="50"
+                            Width="145"
+                            Margin="5,0,0,0"
+                            Style="{StaticResource GenericEuchreButtonStyle}"
+                            x:Name="ContinueButton"
+                            Click="ContinueButton_Click"
+                            IsEnabled="False"/>
+                </StackPanel>
+            </StackPanel>
+
+
+        </Grid>
+    </Viewbox>
+</Page>

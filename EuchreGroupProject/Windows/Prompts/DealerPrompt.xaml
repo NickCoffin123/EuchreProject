@@ -1,0 +1,41 @@
+﻿<Window x:Class="EuchreGroupProject.Windows.Prompts.DealerPrompt"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EuchreGroupProject.Windows.Prompts"
+        mc:Ignorable="d"
+        Title="Deal?" Height="150" Width="400"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Background="#AA000000"
+        ResizeMode="NoResize"
+        AllowsTransparency="True">
+    <StackPanel Orientation="Vertical">
+
+        <TextBlock Text="PlayerName, it is your turn to deal!"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Effect="{StaticResource GlowEffect}"
+                   Style="{StaticResource EuchreFont}"
+                   FontSize="20"
+                   Margin="0,20,0,0"
+                   x:Name="DealerPromptDisplay"/>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,20,0,0">
+            <Button Style="{StaticResource GenericEuchreButtonStyle}"
+                    Width="140"
+                    Content="End Game"
+                    Margin="0,0,10,0"
+                    x:Name="EndGame"
+                    Click="EndGameButton_Click"/>
+            <Button Style="{StaticResource GenericEuchreButtonStyle}"
+                    Width="140"
+                    Content="Deal Now"
+                    Margin="10,0,0,0"
+                    x:Name="DealButton"
+                    Click="DealButton_Click"/>
+            </StackPanel>
+    </StackPanel>
+</Window>

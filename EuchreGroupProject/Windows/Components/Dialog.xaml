@@ -1,0 +1,23 @@
+﻿<Border x:Class="EuchreGroupProject.Windows.Components.Dialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:EuchreGroupProject.Windows.Components"
+        mc:Ignorable="d"
+        BorderBrush="#588157"
+        Background="#A3B18A"
+        Width="750"
+        BorderThickness="2"
+        Effect="{StaticResource GlowEffect}"
+        CornerRadius="5"
+        Visibility="Hidden">
+    <TextBlock Text="Player, this is a dialog that says some words."
+               Style="{StaticResource EuchreFontDark}"
+               FontSize="20"
+               TextAlignment="Center"
+               TextDecorations="Underline"
+               x:Name="DialogDisplay"
+               VerticalAlignment="Center"
+               Visibility="Visible"/>
+</Border>
