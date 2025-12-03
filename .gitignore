@@ -1,4 +1,30 @@
-﻿/EuchreGroupProject/.vs
-/EuchreGroupProject/bin
-/EuchreGroupProject/obj
-/EuchreGroupProject/EuchreGroupProject.csproj.user
+﻿# Build output
+[Ee]uchreGroupProject/bin/
+[Ee]uchreGroupProject/obj/
+
+# Visual Studio workspace
+[Ee]uchreGroupProject/.vs/
+
+# User-specific files
+*.user
+*.suo
+
+# Logs
+logs/
+*.log
+
+# Build artifacts
+*.dll
+*.exe
+*.pdb
+
+# NuGet packages
+packages/
+*.nupkg
+
+# Publish output
+publish/
+
+# Temporary files
+*.tmp
+*.cache
