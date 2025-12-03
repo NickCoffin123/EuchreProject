@@ -302,17 +302,17 @@ namespace EuchreGroupProject
 
             // Setup next trick
             TrickOver = false;
-<<<<<<< HEAD
+
             //if (!winner.IsTurn) SwapTurns();
             SwapTurns();
-=======
+
             winner.IsTurn = true;
             foreach (Player player in Players)
             {
                 if (player != winner) { player.IsTurn = false; }
             }
             NextTurn();
->>>>>>> d4c28977072051901e7b872f570cc46da26825f7
+
         }
 
         /// <summary>
